@@ -1,9 +1,11 @@
+from getpass import getpass
+
 inpt = input('Login [l] or Create account [c]?\n')
 
 if inpt == 'l':
   success = False
   login = input('Type your username:\n')
-  password = input('Type your password:\n')
+  password = getpass('Type your password:\n')
   with open("data.txt") as file:
     for line in file:
       if login in line and password in line:
